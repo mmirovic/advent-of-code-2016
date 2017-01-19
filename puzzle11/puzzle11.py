@@ -18,11 +18,9 @@ for l in f:
 if part == 2:
 	floor[0] += 4
 
-while sum(floor) != floor[-1]:
-	for f in range(4-1):
-		if floor[f] != 0:
-			steps += 1 + (floor[f]-2)*2
-			floor[f+1] += floor[f]
-			floor[f] = 0
+for f in range(4-1):
+	steps += 1 + (floor[f]-2)*2
+	floor[f+1] += floor[f]
+	floor[f] = 0
 
 print floor, steps
